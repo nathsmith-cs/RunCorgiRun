@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Corgi : MonoBehaviour
@@ -19,9 +20,26 @@ public class Corgi : MonoBehaviour
 
         corgiSpriteRenderer.transform.position = SpriteTools.ConstrainToScreen(corgiSpriteRenderer);
     }
-    
-    
-    
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Bone")
+        {
+            print("Corgi Collied with "+other.gameObject.tag);
+        }
+
+        if (other.gameObject.tag == "Pill")
+        {
+            print("Corgi Collied with "+other.gameObject.tag);
+        }
+
+        if (other.gameObject.tag == "Beer")
+        {
+            print("Corgi Collied with "+other.gameObject.tag);
+        }
+    }
+
+
     public void FaceCorrectDirection(Vector2 direction)
     {
         
